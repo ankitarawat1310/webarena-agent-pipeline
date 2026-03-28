@@ -1,0 +1,445 @@
+[
+  {
+    "task_id": "shopping_search",
+    "episode_id": "episode_004",
+    "step_id": 1,
+    "instruction": "Search for a phone product",
+    "observation_before": {
+      "url": "http://localhost:7780/",
+      "title": "Home Page",
+      "visible_buttons": [
+        "Close",
+        "Search",
+        "Add to Cart",
+        "Add to Cart",
+        "Add to Cart",
+        "Add to Cart",
+        "Add to Cart",
+        "Add to Cart",
+        "Subscribe",
+        "Close",
+        "Sign In"
+      ],
+      "visible_inputs": [
+        {
+          "type": "text",
+          "name": "q",
+          "placeholder": "Search entire store here...",
+          "value": ""
+        },
+        {
+          "type": "hidden",
+          "name": "form_key",
+          "placeholder": "",
+          "value": "ACHwxt2WgdazAdPA"
+        },
+        {
+          "type": "hidden",
+          "name": "product",
+          "placeholder": "",
+          "value": "1556"
+        },
+        {
+          "type": "hidden",
+          "name": "uenc",
+          "placeholder": "",
+          "value": "aHR0cDovL2xvY2FsaG9zdDo3NzgwL2NoZWNrb3V0L2NhcnQvYWRkL3VlbmMvYUhSMGNEb3ZMMnh2WTJGc2FHOXpkRG8zTnpnd0x3fn4vcHJvZHVjdC8xNTU2Lw~~"
+        },
+        {
+          "type": "hidden",
+          "name": "form_key",
+          "placeholder": "",
+          "value": "ACHwxt2WgdazAdPA"
+        },
+        {
+          "type": "text",
+          "name": "super_attribute[144]",
+          "placeholder": "",
+          "value": ""
+        },
+        {
+          "type": "text",
+          "name": "super_attribute[93]",
+          "placeholder": "",
+          "value": ""
+        },
+        {
+          "type": "hidden",
+          "name": "product",
+          "placeholder": "",
+          "value": "1812"
+        },
+        {
+          "type": "hidden",
+          "name": "uenc",
+          "placeholder": "",
+          "value": "aHR0cDovL2xvY2FsaG9zdDo3NzgwL2NoZWNrb3V0L2NhcnQvYWRkL3VlbmMvYUhSMGNEb3ZMMnh2WTJGc2FHOXpkRG8zTnpnd0x3fn4vcHJvZHVjdC8xODEyLw~~"
+        },
+        {
+          "type": "hidden",
+          "name": "form_key",
+          "placeholder": "",
+          "value": "ACHwxt2WgdazAdPA"
+        },
+        {
+          "type": "text",
+          "name": "super_attribute[144]",
+          "placeholder": "",
+          "value": ""
+        },
+        {
+          "type": "text",
+          "name": "super_attribute[93]",
+          "placeholder": "",
+          "value": ""
+        },
+        {
+          "type": "hidden",
+          "name": "product",
+          "placeholder": "",
+          "value": "694"
+        },
+        {
+          "type": "hidden",
+          "name": "uenc",
+          "placeholder": "",
+          "value": "aHR0cDovL2xvY2FsaG9zdDo3NzgwL2NoZWNrb3V0L2NhcnQvYWRkL3VlbmMvYUhSMGNEb3ZMMnh2WTJGc2FHOXpkRG8zTnpnd0x3fn4vcHJvZHVjdC82OTQv"
+        },
+        {
+          "type": "hidden",
+          "name": "form_key",
+          "placeholder": "",
+          "value": "ACHwxt2WgdazAdPA"
+        },
+        {
+          "type": "text",
+          "name": "super_attribute[144]",
+          "placeholder": "",
+          "value": ""
+        },
+        {
+          "type": "text",
+          "name": "super_attribute[93]",
+          "placeholder": "",
+          "value": ""
+        },
+        {
+          "type": "hidden",
+          "name": "product",
+          "placeholder": "",
+          "value": "158"
+        },
+        {
+          "type": "hidden",
+          "name": "uenc",
+          "placeholder": "",
+          "value": "aHR0cDovL2xvY2FsaG9zdDo3NzgwL2NoZWNrb3V0L2NhcnQvYWRkL3VlbmMvYUhSMGNEb3ZMMnh2WTJGc2FHOXpkRG8zTnpnd0x3fn4vcHJvZHVjdC8xNTgv"
+        },
+        {
+          "type": "hidden",
+          "name": "form_key",
+          "placeholder": "",
+          "value": "ACHwxt2WgdazAdPA"
+        },
+        {
+          "type": "text",
+          "name": "super_attribute[144]",
+          "placeholder": "",
+          "value": ""
+        },
+        {
+          "type": "text",
+          "name": "super_attribute[93]",
+          "placeholder": "",
+          "value": ""
+        },
+        {
+          "type": "hidden",
+          "name": "product",
+          "placeholder": "",
+          "value": "6"
+        },
+        {
+          "type": "hidden",
+          "name": "uenc",
+          "placeholder": "",
+          "value": "aHR0cDovL2xvY2FsaG9zdDo3NzgwL2NoZWNrb3V0L2NhcnQvYWRkL3VlbmMvYUhSMGNEb3ZMMnh2WTJGc2FHOXpkRG8zTnpnd0x3fn4vcHJvZHVjdC82Lw~~"
+        },
+        {
+          "type": "hidden",
+          "name": "form_key",
+          "placeholder": "",
+          "value": "ACHwxt2WgdazAdPA"
+        },
+        {
+          "type": "hidden",
+          "name": "product",
+          "placeholder": "",
+          "value": "14"
+        },
+        {
+          "type": "hidden",
+          "name": "uenc",
+          "placeholder": "",
+          "value": "aHR0cDovL2xvY2FsaG9zdDo3NzgwL2NoZWNrb3V0L2NhcnQvYWRkL3VlbmMvYUhSMGNEb3ZMMnh2WTJGc2FHOXpkRG8zTnpnd0x3fn4vcHJvZHVjdC8xNC8~"
+        },
+        {
+          "type": "hidden",
+          "name": "form_key",
+          "placeholder": "",
+          "value": "ACHwxt2WgdazAdPA"
+        },
+        {
+          "type": "email",
+          "name": "email",
+          "placeholder": "Enter your email address",
+          "value": ""
+        },
+        {
+          "type": "email",
+          "name": "username",
+          "placeholder": "",
+          "value": ""
+        },
+        {
+          "type": "password",
+          "name": "password",
+          "placeholder": "",
+          "value": ""
+        },
+        {
+          "type": "hidden",
+          "name": "captcha_form_id",
+          "placeholder": "",
+          "value": "user_login"
+        },
+        {
+          "type": "hidden",
+          "name": "context",
+          "placeholder": "",
+          "value": "checkout"
+        }
+      ],
+      "search_box_present": true
+    },
+    "action": {
+      "type": "TYPE_AND_CLICK_SEARCH",
+      "target": "input[name=\"q\"] + Search button",
+      "value": "shirt"
+    },
+    "observation_after": {
+      "url": "http://localhost:7780/catalogsearch/result/?q=shirt",
+      "title": "Search results for: 'shirt'",
+      "visible_buttons": [
+        "Close",
+        "Search",
+        "Add to Cart",
+        "Add to Cart",
+        "Add to Cart",
+        "Add to Cart",
+        "Add to Cart",
+        "Subscribe",
+        "Close",
+        "Sign In"
+      ],
+      "visible_inputs": [
+        {
+          "type": "text",
+          "name": "q",
+          "placeholder": "Search entire store here...",
+          "value": "shirt"
+        },
+        {
+          "type": "hidden",
+          "name": "form_key",
+          "placeholder": "",
+          "value": "ACHwxt2WgdazAdPA"
+        },
+        {
+          "type": "hidden",
+          "name": "product",
+          "placeholder": "",
+          "value": "1556"
+        },
+        {
+          "type": "hidden",
+          "name": "uenc",
+          "placeholder": "",
+          "value": "aHR0cDovL2xvY2FsaG9zdDo3NzgwL2NoZWNrb3V0L2NhcnQvYWRkL3VlbmMvYUhSMGNEb3ZMMnh2WTJGc2FHOXpkRG8zTnpnd0wyTmhkR0ZzYjJkelpXRnlZMmd2Y21WemRXeDBMejl4UFhOb2FYSjAvcHJvZHVjdC8xNTU2Lw~~"
+        },
+        {
+          "type": "hidden",
+          "name": "form_key",
+          "placeholder": "",
+          "value": "ACHwxt2WgdazAdPA"
+        },
+        {
+          "type": "text",
+          "name": "super_attribute[144]",
+          "placeholder": "",
+          "value": ""
+        },
+        {
+          "type": "text",
+          "name": "super_attribute[93]",
+          "placeholder": "",
+          "value": ""
+        },
+        {
+          "type": "hidden",
+          "name": "product",
+          "placeholder": "",
+          "value": "526"
+        },
+        {
+          "type": "hidden",
+          "name": "uenc",
+          "placeholder": "",
+          "value": "aHR0cDovL2xvY2FsaG9zdDo3NzgwL2NoZWNrb3V0L2NhcnQvYWRkL3VlbmMvYUhSMGNEb3ZMMnh2WTJGc2FHOXpkRG8zTnpnd0wyTmhkR0ZzYjJkelpXRnlZMmd2Y21WemRXeDBMejl4UFhOb2FYSjAvcHJvZHVjdC81MjYv"
+        },
+        {
+          "type": "hidden",
+          "name": "form_key",
+          "placeholder": "",
+          "value": "ACHwxt2WgdazAdPA"
+        },
+        {
+          "type": "text",
+          "name": "super_attribute[144]",
+          "placeholder": "",
+          "value": ""
+        },
+        {
+          "type": "text",
+          "name": "super_attribute[93]",
+          "placeholder": "",
+          "value": ""
+        },
+        {
+          "type": "hidden",
+          "name": "product",
+          "placeholder": "",
+          "value": "446"
+        },
+        {
+          "type": "hidden",
+          "name": "uenc",
+          "placeholder": "",
+          "value": "aHR0cDovL2xvY2FsaG9zdDo3NzgwL2NoZWNrb3V0L2NhcnQvYWRkL3VlbmMvYUhSMGNEb3ZMMnh2WTJGc2FHOXpkRG8zTnpnd0wyTmhkR0ZzYjJkelpXRnlZMmd2Y21WemRXeDBMejl4UFhOb2FYSjAvcHJvZHVjdC80NDYv"
+        },
+        {
+          "type": "hidden",
+          "name": "form_key",
+          "placeholder": "",
+          "value": "ACHwxt2WgdazAdPA"
+        },
+        {
+          "type": "text",
+          "name": "super_attribute[144]",
+          "placeholder": "",
+          "value": ""
+        },
+        {
+          "type": "text",
+          "name": "super_attribute[93]",
+          "placeholder": "",
+          "value": ""
+        },
+        {
+          "type": "hidden",
+          "name": "product",
+          "placeholder": "",
+          "value": "430"
+        },
+        {
+          "type": "hidden",
+          "name": "uenc",
+          "placeholder": "",
+          "value": "aHR0cDovL2xvY2FsaG9zdDo3NzgwL2NoZWNrb3V0L2NhcnQvYWRkL3VlbmMvYUhSMGNEb3ZMMnh2WTJGc2FHOXpkRG8zTnpnd0wyTmhkR0ZzYjJkelpXRnlZMmd2Y21WemRXeDBMejl4UFhOb2FYSjAvcHJvZHVjdC80MzAv"
+        },
+        {
+          "type": "hidden",
+          "name": "form_key",
+          "placeholder": "",
+          "value": "ACHwxt2WgdazAdPA"
+        },
+        {
+          "type": "text",
+          "name": "super_attribute[144]",
+          "placeholder": "",
+          "value": ""
+        },
+        {
+          "type": "text",
+          "name": "super_attribute[93]",
+          "placeholder": "",
+          "value": ""
+        },
+        {
+          "type": "hidden",
+          "name": "product",
+          "placeholder": "",
+          "value": "1210"
+        },
+        {
+          "type": "hidden",
+          "name": "uenc",
+          "placeholder": "",
+          "value": "aHR0cDovL2xvY2FsaG9zdDo3NzgwL2NoZWNrb3V0L2NhcnQvYWRkL3VlbmMvYUhSMGNEb3ZMMnh2WTJGc2FHOXpkRG8zTnpnd0wyTmhkR0ZzYjJkelpXRnlZMmd2Y21WemRXeDBMejl4UFhOb2FYSjAvcHJvZHVjdC8xMjEwLw~~"
+        },
+        {
+          "type": "hidden",
+          "name": "form_key",
+          "placeholder": "",
+          "value": "ACHwxt2WgdazAdPA"
+        },
+        {
+          "type": "text",
+          "name": "super_attribute[144]",
+          "placeholder": "",
+          "value": ""
+        },
+        {
+          "type": "text",
+          "name": "super_attribute[93]",
+          "placeholder": "",
+          "value": ""
+        },
+        {
+          "type": "email",
+          "name": "email",
+          "placeholder": "Enter your email address",
+          "value": ""
+        },
+        {
+          "type": "email",
+          "name": "username",
+          "placeholder": "",
+          "value": ""
+        },
+        {
+          "type": "password",
+          "name": "password",
+          "placeholder": "",
+          "value": ""
+        },
+        {
+          "type": "hidden",
+          "name": "captcha_form_id",
+          "placeholder": "",
+          "value": "user_login"
+        },
+        {
+          "type": "hidden",
+          "name": "context",
+          "placeholder": "",
+          "value": "checkout"
+        }
+      ],
+      "search_box_present": true
+    },
+    "reward": 1,
+    "done": true,
+    "timestamp": "2026-03-28T15:12:32.290165"
+  }
+]
