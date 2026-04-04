@@ -27,7 +27,7 @@ def run_single_episode(page, episode_number):
     instruction = random.choice(SEARCH_TASKS)
     episode_id = f"episode_{episode_number:03d}"
 
-    page.goto("http://localhost:7780")
+    page.goto("http://localhost:7770")
     page.wait_for_timeout(3000)
 
     observation_before = extract_observation(page)
