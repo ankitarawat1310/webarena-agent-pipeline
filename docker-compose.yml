@@ -1,0 +1,129 @@
+x-airflow-common: &airflow-common
+  image: apache/airflow:2.8.1-python3.11
+  environment: &airflow-env
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+    AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "true"
+    AIRFLOW__API__AUTH_BACKENDS: airflow.api.auth.backend.basic_auth
+    SHOPPING_URL: "http://webarena-shopping:80"
+    ADMIN_URL: "http://webarena-admin:80"
+    DATABRICKS_HOST: "${DATABRICKS_HOST}"
+    DATABRICKS_TOKEN: "${DATABRICKS_TOKEN}"
+    DATABRICKS_DBFS_ROOT: "/webarena"
+    DATA_DIR: "/opt/airflow/data"
+    NUM_TASKS_PER_SITE: "${NUM_TASKS_PER_SITE:-5}"
+    MAX_STEPS_PER_TASK: "${MAX_STEPS_PER_TASK:-8}"
+    PYTHONPATH: "/opt/airflow"
+  volumes:
+    - ./dags:/opt/airflow/dags
+    - ./scripts:/opt/airflow/scripts
+    - ./src:/opt/airflow/src
+    - ./config:/opt/airflow/config
+    - ./data:/opt/airflow/data
+    - airflow-logs:/opt/airflow/logs
+    - /var/run/docker.sock:/var/run/docker.sock
+  depends_on:
+    postgres:
+      condition: service_healthy
+  restart: unless-stopped
+
+services:
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 10s
+      retries: 5
+    restart: unless-stopped
+
+  airflow-init:
+    <<: *airflow-common
+    restart: "no"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        pip install playwright pyyaml requests --quiet
+        playwright install chromium
+        playwright install-deps
+        airflow db init
+        airflow users create \
+          --username admin --password admin \
+          --firstname Admin --lastname User \
+          --role Admin --email admin@webarena.local
+
+  airflow-webserver:
+    <<: *airflow-common
+    command: webserver
+    ports:
+      - "8081:8080"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  airflow-scheduler:
+    <<: *airflow-common
+    command: scheduler
+
+  webarena-shopping:
+    image: am1n3e/webarena-verified-shopping
+    container_name: webarena-verified-shopping
+    ports:
+      - "7770:80"
+      - "7771:8877"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 20s
+      timeout: 10s
+      retries: 15
+      start_period: 90s
+    restart: unless-stopped
+
+  webarena-admin:
+    image: am1n3e/webarena-verified-shopping_admin
+    container_name: webarena-verified-shopping-admin
+    ports:
+      - "7780:80"
+      - "7781:8877"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 20s
+      timeout: 10s
+      retries: 15
+      start_period: 90s
+    restart: unless-stopped
+
+  webarena-collector:
+    image: mcr.microsoft.com/playwright/python:v1.43.0-jammy
+    container_name: webarena-collector
+    network_mode: host
+    environment:
+      PYTHONPATH: "/app"
+      DATA_DIR: "/app/data"
+    volumes:
+      - ./scripts:/app/scripts
+      - ./src:/app/src
+      - ./data:/app/data
+    command: >
+      bash -c "pip install playwright pyyaml requests --quiet &&
+      playwright install chromium &&
+      tail -f /dev/null"
+    restart: unless-stopped
+
+volumes:
+  postgres-db:
+  airflow-data:
+  airflow-logs:

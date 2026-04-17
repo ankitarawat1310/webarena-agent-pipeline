@@ -1,0 +1,49 @@
+shopping:
+  site: shopping
+  base_url: "http://localhost:7770"
+  tasks:
+    - task_id: shop_001
+      instruction: "Search for a laptop bag and click the first result."
+      start_url: "/"
+      success_hints: ["search", "result"]
+    - task_id: shop_002
+      instruction: "Search for a phone case and view the product details."
+      start_url: "/"
+      success_hints: ["search", "result"]
+    - task_id: shop_003
+      instruction: "Search for a watch and check its price."
+      start_url: "/"
+      success_hints: ["search", "result"]
+    - task_id: shop_004
+      instruction: "Search for wireless earbuds."
+      start_url: "/"
+      success_hints: ["search", "result"]
+    - task_id: shop_005
+      instruction: "Search for a shirt."
+      start_url: "/"
+      success_hints: ["search", "result"]
+
+admin:
+  site: shopping_admin
+  base_url: "http://localhost:7780"
+  tasks:
+    - task_id: admin_001
+      instruction: "Search for orders in the admin panel."
+      start_url: "/admin"
+      success_hints: ["order", "admin"]
+    - task_id: admin_002
+      instruction: "Search for a customer named John in the admin panel."
+      start_url: "/admin"
+      success_hints: ["customer", "admin"]
+    - task_id: admin_003
+      instruction: "Search for products with low stock in the catalog."
+      start_url: "/admin"
+      success_hints: ["product", "admin"]
+    - task_id: admin_004
+      instruction: "Search for pending orders in the admin panel."
+      start_url: "/admin"
+      success_hints: ["order", "pending"]
+    - task_id: admin_005
+      instruction: "Search for the product laptop in the admin catalog."
+      start_url: "/admin"
+      success_hints: ["laptop", "product"]
