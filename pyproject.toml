@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "webarena-agent-pipeline"
+version = "0.2.0"
+description = "WebArena data pipeline plus shopping DQN/DDQN and LLM baselines (webarena_rl)."
+requires-python = ">=3.10"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

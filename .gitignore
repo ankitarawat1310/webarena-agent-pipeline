@@ -122,3 +122,32 @@ logs/
 # Temporary files
 *.tmp
 *.temp
+
+# --- RL / DQN-DDQN branch: run artifacts and weights ---
+artifacts/
+checkpoints/
+models/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+runs/
+wandb/
+.mlflow/
+tensorboard/
+*.npz
+
+# Tooling / IDE (keep team-local noise out of the repo)
+.cursor/
+
+# HuggingFace / torch hub caches (often huge; do not commit)
+.cache/
+hub/
+
+# To stop tracking bundled episode JSON already in `data/`, run:
+#   git rm -r --cached data/
+# then uncomment:
+# /data/raw/
+# /data/processed/
+# /data/transformed/
+# /data/splits/

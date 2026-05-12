@@ -1,0 +1,68 @@
+project:
+  name: webarena-shopping-rl-debug
+  seed: 42
+  seeds: [42, 43]
+
+environment:
+  shopping_url: "http://localhost:7770"
+  admin_url: "http://localhost:7780"
+  max_steps_per_episode: 15
+  headless: true
+  repair_invalid_actions: false
+  clear_state_on_reset: true
+  force_click: false
+
+replay:
+  path: "artifacts/replay/transitions.jsonl"
+  capacity: 50000
+  online_capacity: 5000
+  offline_prefill_target_transitions: 500
+  offline_to_online_sample_ratio: 0.5
+
+offline_prefill:
+  teacher_mix:
+    scripted: 0.5
+    llm: 0.3
+    random: 0.2
+  max_episodes: 50
+
+llm_baseline:
+  model_name: "qwen2.5:1.5b-instruct"
+  use_real_llm: true
+  backend: "ollama"
+  endpoint: "http://localhost:11434"
+  timeout_seconds: 30
+  temperature: 0.0
+  top_p: 1.0
+  max_tokens: 128
+  history_window: 6
+  retry_invalid_json: 2
+
+training:
+  batch_size: 64
+  gamma: 0.99
+  learning_rate: 0.0001
+  target_sync_steps: 200
+  epsilon_start: 1.0
+  epsilon_final: 0.1
+  epsilon_decay_steps: 1000
+  grad_clip_norm: 1.0
+  total_steps: 1500
+  max_grounded_elements: 20
+  state_encoder: "sentence_transformer"
+  sentence_transformer_model: "sentence-transformers/all-MiniLM-L6-v2"
+
+comparison:
+  agents:
+    - "llm_prompt_baseline"
+    - "vanilla_dqn"
+    - "ddqn"
+  eval_episodes: 10
+
+tasks:
+  train_path: "configs/tasks/train_tasks.yaml"
+  eval_path: "configs/tasks/eval_tasks.yaml"
+
+debug:
+  enabled: true
+  trace_dir: "artifacts/reports/traces"
